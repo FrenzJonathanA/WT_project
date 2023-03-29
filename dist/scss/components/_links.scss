@@ -1,0 +1,87 @@
+.links{
+    padding: 3rem;
+    background-color: $clr-light;
+    margin-top: 2rem;
+    width: 100%;
+    border-top: 1.5px solid $clr-gray;
+    &__wrapper{
+        padding-bottom: 3rem;
+        border-bottom: 1.5px solid $clr-gray;
+
+    }
+    &__item{
+        h4{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            i{
+                transition: .5s ease;
+                &.open{
+                    transform: rotate(-180deg);
+                    transition: .5s ease;
+                }
+            }
+            span{
+                color: #000000DE;
+                font-size: clamp(1.7rem, 3vw, 2rem);
+                font-weight: 500;
+                font-family: $ff-primary;
+            }
+        }
+        ul{
+            max-height: 0;
+            overflow: hidden;
+            margin-left: 2rem;
+            transition: .5s ease;
+            &.open{
+                max-height: 25rem;
+                transition: .5s ease;
+                
+            }
+            li{
+                margin: 2rem 0;
+            }
+            a{
+                font-size: clamp(1.4rem, 3vw, 1.6rem);
+                color: $clr-textsecondary;
+            }
+            a:hover{
+                color: $clr-dark;
+                cursor: pointer;
+              
+            }
+        }
+        &:nth-child(2){
+            margin: 3rem 0;
+        }
+        &:last-child{
+            cursor: pointer;
+        }
+    }
+
+    @include mediaQuery($break-lg){
+        margin: 0rem;
+        &__wrapper{
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-gap: 3rem;
+            justify-content: space-around;
+        }
+        &__item{
+            &:nth-child(2){
+                margin: 0rem;
+            }
+            h4{
+                display: unset;
+                i{
+                    display: none;
+                }
+            }
+            ul{
+                max-height: 25rem;
+                margin-left: 0rem;
+            }
+        }
+    }
+}

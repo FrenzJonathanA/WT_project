@@ -1,0 +1,70 @@
+$colors: (
+    "primary": $clr-primary,
+    "dark": $clr-dark,
+    "light": $clr-light,
+    "textP": $clr-textprimary,
+    "textS": $clr-textsecondary,
+
+);
+
+@each $key, $val in $colors{
+    .bg{
+        &--#{$key}{
+            background:$val;
+        }
+    }
+    .text{
+        &--#{$key}{
+           color:$val;
+        }
+    }
+}
+
+
+// $displays:(
+//     "flex": flex,
+//     "block": block,
+//     "lblock": inline-block,
+// );
+
+// @each $key, $val in $displays{
+//     .d{
+//         &--#{$key}{
+//             display:$val;
+//         }
+//     }
+// }
+
+$displays: flex, block, inline-block;
+@each $display in $displays{
+    .d{
+        &--#{$display}{
+            display: $display;
+        }
+    }
+}
+
+$alignments: (
+    "center":center,
+    "justify": justify,
+    "left":left,
+    "right": right,
+);
+
+@each $key, $val in $alignments{
+    .text{
+        &--#{$key}{
+            align-items:$val;
+        }
+    }
+}
+
+@for $i from 1 through 20{
+    .py--#{$i}{
+        padding:$i + rem 0;
+    }
+    .ml--#{$i}{
+        margin-left: $i + rem 0;
+    }
+}
+
