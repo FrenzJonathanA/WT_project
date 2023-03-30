@@ -14,7 +14,6 @@ toggleMenuDev.addEventListener("click", () => {
   toggleMenuDev.classList.toggle("open");
   headerDev.classList.toggle("open");
   headerDev.style=("transition:.5s ease");
-  
 });
 
 const toggleDotsDev = document.querySelector(".toggle__dots");
@@ -49,13 +48,13 @@ function removeActiveContent(){
   })
 }
 
-// const headerDNav=document.querySelectorAll(".headerD__navD__items .itemD .itemD__top a");
-// const dropHead=document.querySelectorAll(".headerD__navD__items .itemD ul");
-// headerDNav.addEventListener("click", () => {
-//   headerDNav.classList.toggle("open");
-//   dropHead.classList.toggle("open");
-//   dropHead.style=("transition:.5s ease");
-// });
+const headerDNav=document.querySelectorAll(".headerD__navD__items .itemD .itemD__top a");
+const dropHead=document.querySelectorAll(".headerD__navD__items .itemD ul");
+headerDNav.addEventListener("click", () => {
+  headerDNav.classList.toggle("open");
+  dropHead.classList.toggle("open");
+  dropHead.style=("transition:.5s ease");
+});
 
 
 

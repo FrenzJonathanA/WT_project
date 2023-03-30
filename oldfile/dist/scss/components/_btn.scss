@@ -1,0 +1,51 @@
+.btn {
+    background: $clr-primary;
+    //border-radius: 3rem;
+    padding: .8rem 1.8rem;
+    border: 1px solid;
+    display: inline-block;
+    transition: .5 ease-in-out;
+    &--primary{
+        background-color: $clr-primary;
+        color: $clr-light;
+        border-color: $clr-primary;
+        &:hover{
+            background-color: darken($clr-primary, 10);
+        }
+    }
+    &--outline{
+        background-color: transparent;
+        color: $clr-primary;
+        border-color: $clr-primary;
+        &:hover{
+            background-color: $clr-primary;
+            color: $clr-dark;
+            border-color: unset;
+            transition: .5s ease;
+        }
+        // &:hover{
+        //    // background-color: $clr-primary;
+        //     color: $clr-light
+        // }
+
+    }
+    &--dark{
+        background-color: $clr-dark;
+        color: $clr-light;
+        border-color: $clr-dark;
+        &:hover{
+            background-color: darken($clr-dark, 10);
+        }
+    }
+    &--trans{
+        color: $clr-light;
+        font-size: 1.6rem;
+        font-weight: 500;
+        border: 2px solid;
+        &:hover{
+            background-color: $clr-light;
+            color: $clr-dark;
+            transition: .5s ease;
+        }
+    }
+}

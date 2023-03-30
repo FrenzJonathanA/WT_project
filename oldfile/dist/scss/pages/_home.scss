@@ -1,44 +1,80 @@
+.headerD{
+    background-color: $clr-bgsecondary;
+    
+    &__navD{
+        display: none;
+    }
+    @include mediaQuery($break-lg){
+        
+        &__wrapper{
+            display: flex;
+            padding: 1rem;
+        }
+        &__navD{
+            display: flex;
+            //position: absolute;
+            width: 100%;
+            max-width: 120rem;
+            margin: auto;
+            justify-content: space-between;
+            align-items: center;
+            //margin-left: 37rem;
+            &__items{
+                display: flex;
+                
+                .itemD{
+                    display: flex;
+                    padding: 1.5rem 2rem; 
+                    &:hover{
+                        background-color: #faf7f750;
+                    }
+                    .itemD__top{
+                        a{
+                            font-size: 2rem;
+                            font-weight: 600;
+                            cursor: pointer ;
+                            color: $clr-light;  
+                             
+                        }
+                    }
+                    ul{
+                        display: none;
+                    }
+                }
+            }
+            &__icon{
+                ul{
+                    display: flex;
+                    gap: 2rem;
+                    i{
+                        font-size: 2rem;
+                        font-weight: 600;
+                        color: $clr-light;
+                        padding: 1rem .3rem; 
+                        &:hover{
+                            color: $clr-bgprimary;
+                        }
+
+                    }    
+                }
+            }
+            
+        }
+    }
+
+}
 
 
 .banner{
     position: relative;
-    .tns-outer{
-        position: relative;
-        button{
-            display: none;
-        }
-    }
-
-    .tns-controls{
-        position: absolute;
-        top: 45%;
-        width: 100%;
-        z-index: 99;
-        justify-self: right;
-        button {
-            border: none;
-            font-size: 2rem;
-            display: block;
-            margin-left: 150rem;
-            padding: 0 .3rem;
-            &:hover{
-                background-color: #c2c5f171;
-                border-radius: 50%;
-            }
-        }
-    }
-
-    
-
     &__view1{
-        background-image: url("/dist/img/slider-4-slide-1-1920x678.jpg");
+        background-image: url(/dist/img/slider-4-slide-1-1920x678.jpg);
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
         min-height: 80rem;
         align-items: center;
-
         .banner__slider{
             padding: 30rem 0;
             h6{
@@ -61,7 +97,6 @@
             }
             .banner__btn{
                 button{
-                    display: inline-block;
                     text-align: center;
                     padding: 1.5rem;
                     margin: 0 2rem;
@@ -107,9 +142,7 @@
 
         @include mediaQuery($break-lg){
            .banner__slider{
-                max-width: 120rem;
-                margin: 0 auto;
-                // margin-left: 35rem;
+                margin-left: 35rem;
                 h6{
                     padding-left: unset;
                 }
@@ -129,7 +162,7 @@
     }  
 
     &__view2{
-        background-image: url("/dist/img/slider-4-slide-2-1920x678.jpg");
+        background-image: url(/dist/img/slider-4-slide-2-1920x678.jpg);
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -158,7 +191,6 @@
             }
             .banner__btn{
                 button{
-                    display: inline-block;
                     text-align: center;
                     padding: 1.5rem;
                     margin: 0 2rem;
@@ -202,9 +234,7 @@
 
         @include mediaQuery($break-lg){
            .banner__slider{
-                max-width: 120rem;
-                margin: 0 auto;
-                // margin-left: 35rem;
+                margin-left: 35rem;
                 h6{
                     padding-left: unset;
                 }
@@ -223,7 +253,7 @@
         }
     }
     &__view3{
-        background-image: url("/dist/img/slider-4-slide-3-1920x678.jpg");
+        background-image: url(/dist/img/slider-4-slide-3-1920x678.jpg);
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -231,7 +261,6 @@
         min-height: 80rem;
         align-items: center;
         .banner__slider{
-            
             padding: 30rem 0;
             h6{
                 font-size: 2rem;
@@ -253,7 +282,6 @@
             }
             .banner__btn{
                 button{
-                    display: inline-block;
                     text-align: center;
                     padding: 1.5rem;
                     margin: 0 2rem;
@@ -300,9 +328,7 @@
 
         @include mediaQuery($break-lg){
            .banner__slider{
-                max-width: 120rem;
-                margin: 0 auto;
-                // margin-left: 35rem;
+                margin-left: 35rem;
                 h6{
                     padding-left: unset;
                 }
@@ -320,7 +346,26 @@
             }
         }
     } 
-    
+    .tns-outer{
+        position: relative;
+    }
+
+    .tns-controls{
+        position: absolute;
+        top: 45%;
+        width: 100%;
+        z-index: 99;
+        justify-self: right;
+        button {
+            border: none;
+            font-size: 2rem;
+            display: block;
+            &:hover{
+                background-color: #c2c5f171;
+                border-radius: 30%;
+            }
+        }
+    }
         
 }
 
@@ -335,11 +380,11 @@
             max-width: 35rem;
             margin: 0 auto;
             cursor: pointer;
-            img{
-                transition: .5s ease-in-out;
-            }
+
             &:hover img{
-                transform: scale(1.1);    
+                transform: scale(1.1);
+                transition: .5s ease-in-out;
+                
             }
         
             &__lead{
@@ -408,13 +453,11 @@
         &__package{
             position: absolute;
             top: 85rem;
-            margin-left: 2.3rem;
 
         }
         &__view{
             display: flex;
-            gap: 7rem;
-            margin-left: -2.5rem;
+            gap: 5rem;
             
             .views{
                 //margin-left: 3rem;
@@ -428,7 +471,7 @@
             
         }
         ul{
-            margin-top: 28rem;
+            margin-top: 25rem;
         }
     }
     
@@ -455,7 +498,8 @@
             margin: 0 auto;
             padding: 2rem 0;
             flex-wrap: wrap;
-             
+            
+            
             li{
                 padding: .5rem .5rem;
                 margin-top: .5rem;
@@ -487,8 +531,6 @@
             }   
         }
     }
-
-    
     &__tab{ 
         padding: 0 3rem;
         position: relative;         
@@ -497,10 +539,10 @@
         justify-content: center;  
         text-align: center;        
         &__content{
+            display: flex;
             position: absolute;
             align-items: center;
             opacity: 0;
-        
             p{
                 color: #464545;
             }
@@ -513,16 +555,50 @@
                 padding: 2rem 0;
                 button{
                     padding: 1.5rem 5rem;
-                    cursor: pointer;    
-                } 
-            }
+                    
+                    cursor: pointer;
 
+                    &:first-child{
+                        background-color: #01B3A7;
+                        border-color: $clr-bgprimary;
+                        transition: .2s ease-in-out;
+                        margin-right: 2rem;
+                        a{
+                            color: #ffffff;
+                            font-size: 1.8rem;
+                        }
+                        &:hover{
+                            transition: .2s ease-in-out;
+                            background-color: $clr-light;
+                            border-color: $clr-dark;
+                            a{
+                                color: $clr-dark;
+                            }
+                        }
+                        
+                    }
+                    &:last-child{
+                        border-width: 2px;
+                        border-color: black;
+                        border-style: solid;
+                        a{
+                            color: $clr-dark;
+                            font-size: 1.8rem;
+                        }
+                        &:hover{
+                            background-color: $clr-bgprimary;
+                            border-color: $clr-bgprimary;
+                        }  
+                    }
+                }  
+            }
             &.active{
                 display: block;
                 opacity: 1;
                 transition: .5s ease;
             }
         }
+        
     }
 
     @include mediaQuery($break-lg){
@@ -535,7 +611,8 @@
             width: 50%;
             display: unset;
             margin: 2.5rem 0;
-                
+            
+            
         }
         &__tab{
             padding: unset;
@@ -551,7 +628,6 @@
                     display: unset;
                     gap: 2rem;
                 }
-                
             }
         }
         
@@ -675,264 +751,57 @@
     }
 }
 
-.leaders{
-    &__wrapper{
-        padding: 5rem 1rem;
-        
-        h3{
-            text-align: center;
-            font-size: 3.5rem;
-            font-weight: 600;
-        }
-    }
-    &__profile{
-        .leaders__face{
-            img{
-                transform: translateY(6rem);
-                border: 15px solid $clr-light;
-                border-radius: 50%;
-                display: block;
-                margin: 0 auto;
-            }
-        }
-        
-        .leaders__contacts{
-            text-align: center;
-            margin: 0 auto;
-            background-color: #f7f7f7;
-            max-width: 30rem;
-            padding: 3rem;
-            padding-top: 7rem;
-            a{
-                font-size: 2rem;
-                font-weight: 600;
-            }
-            p{
-                color: $clr-mintblue;
-            }
-        }
-        
-    }
-    @include mediaQuery($break-lg){
-        &__wrapper{
-            h3{
-                margin: unset;
-                font-size: 4rem;
-            }
-        }
-        &__cards{
-            display: flex;
-            justify-content: space-between;
-        }
-        &__contacts{
-            width: 27rem;
-        }
-        // &__face{
-        //     &:hover{
-        //         img{
-        //             border: 4px solid $clr-primary;
-        //             transform: translateY(3rem);
-        //             transition: .5s ease;
-        //         }
-        //     }
-        // } 
-    }
-}
-
 .newsletter{
-    
-    background-image: url("/dist/img/newsletter1.jpg");
+    background-image: url(/dist/img/newsletter1.jpg);
     background-repeat: no-repeat;
-    background-position: top;
+    background-position: center;
     background-size: cover;
-    min-height: 50rem;
+    min-height: 30rem;
     align-items: center;
     padding: 1rem;
+
     &__wrapper{
-        
-        padding: 9rem 1rem;
+        max-width: 75rem;
+        width: 100%;
+        margin: 0 auto;
         color: $clr-light;
         text-align: center;
-        align-items: center; 
+        align-items: center;
         h2{
-            font-size: clamp(3rem, 3vw, 5rem);
+            font-size: clamp(3rem, 6vw, 5rem);
         }
         small{
             font-size: clamp(3rem, 6vw, 5rem);
         }
         p{
-            font-size: clamp(1.8rem, 3vw, 2rem);
+            font-size: 2rem;
             margin: 2rem 0;
             opacity: 0.8;
         }
+
         form{
-            button{
-                padding: .8rem 1.6rem;
-                transform: translate(-12px);
-                &:hover{
-                    border-color: unset;
-                    background-color: transparent;
-                    border:3px solid $clr-light;
-                    a{
-                        color: $clr-light
-                    }
-                }     
-            }
-        } 
-    }
+            // background-color: $clr-light;
+            // padding: .5rem;
 
-    @include mediaQuery($break-lg){
-        &__wrapper{
-            max-width: 75rem;
-            width: 100%;
-            margin: 0 auto;   
-        }   
-    }   
-}
-
-.quotes{
-    background-color:  #f7f7f7;
-    &__wrapper{
-        padding: 5rem 1rem;
-        h3{
-            text-align: center;
-            font-size: 3.5rem;
-            font-weight: 600;
-        }
-    }
-    &__profile{
-        .quotes__face{
-            img{
-                transform: translateY(6rem);
-                border: 15px solid $clr-light;
-                border-radius: 50%;
-                display: block;
-                margin: 0 auto;
-            }
-        }
-        
-        .quotes__contacts{
-            text-align: center;
-            margin: 0 auto;
-            background-color: $clr-light;
-            max-width: 42rem;
-            padding: 3rem 2rem;
-            padding-top: 7rem;
-            a{
-                color: $clr-mintblue;
-                font-size: 3rem;
-                font-weight: 400;
-            }
-            p{
-                color: $clr-textprimary;
-            }
-        }
-        
-    }
-    @include mediaQuery($break-lg){
-        &__wrapper{
-            h3{
-                margin: unset;
-                font-size: 4rem;
-            }
-        }
-        &__cards{
-            display: flex;
-            justify-content: space-between;
-        }
-        &__contacts{
-            width: 38rem;
-            p{
-                font-size: 1.8rem;
-            }
-        }
-        
-    }
-}
-
-.subscription{
-    
-    background-image: url("/dist/img/newsletter2.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    min-height: 50rem;
-    align-items: center;
-    padding: 1rem;
-    &__wrapper{
-        overflow-x: hidden;
-        color: $clr-light;
-        text-align: center;
-        align-items: center;
-        width: 100%;
-        padding: 12rem 1rem; 
-
-        h2{
-            font-size: clamp(3rem, 3vw, 5rem);
-        }
-        
-        p{
-            font-size: clamp(1.8rem, 3vw, 2rem);
-            margin: 2rem 0;
-            opacity: 0.8;
-        }
-        form{
-            justify-content: center;
             input{
                 text-align: left;
-                padding: 2rem 1.6rem;
-                background-color: #a8a6a696;
-                width: 40rem;
-                margin-bottom: 2rem;
-                &::placeholder{
-                    color: $clr-light;
-                }
+                padding: .8rem 1.6rem;
+                width: 28rem;
+                border: 3px solid $clr-light;
+                border-radius: .5rem;
+                background-color: $clr-light;
+                color: $clr-dark;
             }
             button{
-                width: 40rem;
-                text-align: center;
-                margin: unset;
-                padding: 1.8rem 0;
-                font-size: 1rem;
-                font-weight: 500;
-                &:hover{
-                    background-color: $clr-dark;
-                    a{
-                        color: $clr-light;
-                    }
-                }
+                background-color: $clr-primary;
+                padding: .8rem 1.6rem;
+                border-radius: .5rem;
+                color: $clr-dark;
+                border: 3px solid $clr-light;
+                transform: translate(-12px);
+                 
             }
         }
     }
-    @include mediaQuery($break-lg){
-        &__wrapper{
-            max-width: 75rem;
-            margin: 0 auto;
-        
-            form{
-                
-                input{ 
-                    width: 28rem;
-                    padding: .8rem 1.6rem;
-                    border: 3px solid #a8a6a61f;
-                    
-                }
-                button{
-                    width: 20rem;
-                    padding: .78rem 1.6rem;
-                    &:hover{
-                        border:2px solid $clr-dark;
-                        background-color: $clr-dark;
-                        
-                        
-    
-                    }
-                     
-                }
-            }
-        }
-    }
-
-    
     
 }

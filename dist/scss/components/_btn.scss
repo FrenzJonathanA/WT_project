@@ -13,6 +13,54 @@
             background-color: darken($clr-primary, 10);
         }
     }
+    &--trans{
+        color: $clr-light;
+        font-size: 1.6rem;
+        font-weight: 500;
+        border: 2px solid;
+        &:hover{
+            background-color: $clr-light;
+            color: $clr-dark;
+            transition: .5s ease;
+        }
+    }
+
+    &--transD{
+        background-color: #01B3A7;
+        border-color: $clr-bgprimary;
+        transition: .2s ease-in-out;
+        margin-right: 2rem;
+        border-width: 2px;
+        a{
+            color: #ffffff;
+            font-size: 1.8rem;
+        }
+        &:hover{
+            transition: .2s ease-in-out;
+            background-color: $clr-light;
+            border-color: $clr-dark;
+            a{
+                color: $clr-dark;
+            }
+        }
+    }
+
+    &--outlineD{
+        border-width: 2px;
+        border-color: black;
+        border-style: solid;
+        background-color: transparent;
+        transition: .2s ease-in-out;
+        a{
+            color: $clr-dark;
+            font-size: 1.8rem;
+        }
+        &:hover{
+            background-color: $clr-bgprimary;
+            border-color: $clr-bgprimary;
+        }
+    }
+    
     &--outline{
         background-color: transparent;
         color: $clr-primary;
@@ -37,15 +85,5 @@
             background-color: darken($clr-dark, 10);
         }
     }
-    &--trans{
-        color: $clr-light;
-        font-size: 1.6rem;
-        font-weight: 500;
-        border: 2px solid;
-        &:hover{
-            background-color: $clr-light;
-            color: $clr-dark;
-            transition: .5s ease;
-        }
-    }
+    
 }
